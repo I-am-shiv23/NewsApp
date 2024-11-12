@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap');
 
 * {
     padding: 0;
@@ -7,14 +7,13 @@
 }
 
 body {
-    font-family: "Roboto", sans-serif;
+    font-family: "Poppins", sans-serif;
     color: var(--primary-text-color);
 }
 
 p {
-    font-family: "Roboto", sans-serif;
     color: var(--secondary-text-color);
-    line-height: 1.4rem;
+    line-height: 1.5;
 }
 
 a {
@@ -23,17 +22,13 @@ a {
 
 ul {
     list-style: none;
-}
-
-.flex {
-    display: flex;
-    align-items: center;
+    padding: 0;
 }
 
 .container {
-    max-width: 1120px;
-    margin-inline: auto;
-    overflow: hidden;
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 0 20px;
 }
 
 nav {
@@ -41,35 +36,44 @@ nav {
     box-shadow: 0 0 4px #dcebf8;
     position: fixed;
     top: 0;
-    z-index: 99;
     left: 0;
     right: 0;
+    z-index: 99;
+    width: 100%;
+    justify-content: space-around;
+   
 }
 
 .main-nav {
+    display: flex;
+    justify-content: center; 
     align-items: center;
-    padding: 10px;
+    padding: 15px 20px;
 }
 
 .company-logo h2 {
-    font-size: 35px;
+    font-size: 30px;
     color: white;
-    display: flex;
-    justify-content: center;
 }
 
 .second-nav {
+    background-color: #fff;
+    padding: 10px;
+    margin-top: 61px; 
     display: flex;
     justify-content: space-between;
-    margin-top: 61px;
+    flex-wrap: wrap;
+}
+
+.nav-links {
+    display: flex;
     gap: 20px;
-    background-color: white;
+    flex-wrap: wrap;
 }
 
 .nav-links ul {
-    margin-top: 5px;
-    gap: 50px;
-    margin-left: 198px;
+    display: flex;
+    gap: 40px;
 }
 
 .hover-link {
@@ -80,49 +84,38 @@ nav {
     color: rgb(28, 151, 223);
 }
 
-.hover-link:active {
-    color: red;
-}
-
-.nav-item.active {
-    color: rgb(28, 151, 223);
-}
-
 .search-container {
     position: relative;
-
+    flex-grow: 1;
+    display: flex;
+    justify-content: flex-end;
 }
 
 .search-bar {
     display: flex;
     align-items: center;
-    margin-right: 199px;
-    height: 32px;
-    
+    height: 35px;
 }
-@media screen {
-    
-}
+
 .news-input {
     width: 0;
-    height: 100%;
-    padding-inline: 12px;
-    border-radius: 4px;
-    border: 2px solid #bbd0e2;
-    transition: width 2s ease;
     opacity: 0;
     visibility: hidden;
+    height: 100%;
+    padding-inline: 10px;
+    border-radius: 4px;
+    border: 1px solid #bbd0e2;
+    transition: all 0.5s ease-in-out;
 }
 
 .search-button {
     background-color: rgb(169, 180, 182);
     color: white;
-    padding: 8px 15px;
+    padding: 8px 12px;
     border: none;
     border-radius: 4px;
     cursor: pointer;
-    font-family: "Roboto", sans-serif;
-    transition: background-color 0.5s ease;
+    transition: background-color 0.3s ease;
 }
 
 .search-button:hover {
@@ -130,50 +123,106 @@ nav {
 }
 
 .search-container:hover .news-input {
-    width: 200px;
+    width: 180px;
     opacity: 1;
     visibility: visible;
 }
 
 main {
-    padding-block: 20px;
-    margin-top: 80px;
+    padding-top: 150px;
 }
 
 .cards-container {
-    justify-content: space-between;
-    flex-wrap: wrap;
-    row-gap: 20px;
-    align-items: start;
-  
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 20px;
 }
 
 .card {
-    width: 360px;
-    min-height: 400px;
-    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
-    border-radius: 4px;
-    cursor: pointer;
     background-color: #fff;
-    overflow: hidden;
-    transition: all 0.3s ease;
+    border-radius: 4px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
 }
 
 .card:hover {
-    box-shadow: 1px 1px 8px #d4ecff;
-    background-color: #f9fdff;
-    transform: translateY(-2px);
+    transform: translateY(-5px);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
 }
 
 .card-header img {
     width: 100%;
-    object-fit: cover;
+    border-top-left-radius: 4px;
+    border-top-right-radius: 4px;
 }
 
 .card-content {
-    padding: 12px;
+    padding: 15px;
 }
 
 .news-source {
-    margin-block: 12px;
+    margin-top: 10px;
+}
+
+
+@media (max-width: 768px) {
+  
+    .main-nav {
+        flex-direction: column;
+        align-items: center;
+        padding: 15px 10px;
+    }
+
+    .company-logo h2 {
+        font-size: 24px;
+    }
+
+    .second-nav {
+        flex-direction: column;
+        align-items: center;
+        padding: 10px;
+    }
+
+
+    .nav-links{
+        flex-direction: column;
+        align-items: center;
+        gap: 5px;
+    }
+
+    .search-container {
+        margin-top: 10px;
+       
+    }
+   .search-button{
+         padding-left: 220px;
+         padding-right: 220px;
+   }
+
+    .card {
+        min-width: 90%;
+    }
+}
+
+@media (max-width: 480px) {
+    .company-logo h2 {
+        font-size: 20px;
+    }
+    .search-button{
+        padding-left: 80px;
+        padding-right: 80px;
+  }
+    .nav-links ul {
+         flex-wrap: wrap; 
+        align-items: center;
+        gap: 12px;
+    }
+
+    .cards-container {
+        grid-template-columns: 1fr;
+    }
+
+    .news-input {
+        width: 120px;
+    }
 }
