@@ -41,15 +41,12 @@ nav {
     z-index: 99;
     width: 100%;
     justify-content: space-around;
-   
 }
 
-.main-nav {
-    display: flex;
-    justify-content: center; 
-    align-items: center;
-    padding: 15px 20px;
+.main-nav{
+    padding: 10px 20px;
 }
+
 
 .company-logo h2 {
     font-size: 30px;
@@ -59,7 +56,9 @@ nav {
 .second-nav {
     background-color: #fff;
     padding: 10px;
-    margin-top: 61px; 
+    margin-top: 60px; 
+    padding-left: 19px;
+    padding-right: 20px;
     display: flex;
     justify-content: space-between;
     flex-wrap: wrap;
@@ -95,6 +94,7 @@ nav {
     display: flex;
     align-items: center;
     height: 35px;
+    gap: 10px;
 }
 
 .news-input {
@@ -103,23 +103,20 @@ nav {
     visibility: hidden;
     height: 100%;
     padding-inline: 10px;
-    border-radius: 4px;
+    border-radius: 15px;
     border: 1px solid #bbd0e2;
     transition: all 0.5s ease-in-out;
 }
 
-.search-button {
-    background-color: rgb(169, 180, 182);
-    color: white;
-    padding: 8px 12px;
+.search-button{
+    background-color: transparent;
+       height: 25px;
     border: none;
-    border-radius: 4px;
-    cursor: pointer;
-    transition: background-color 0.3s ease;
 }
 
 .search-button:hover {
-    background-color: rgb(0, 92, 184);
+    background-color: rgb(231, 231, 231);
+    border-radius: 10px;
 }
 
 .search-container:hover .news-input {
@@ -164,65 +161,32 @@ main {
     margin-top: 10px;
 }
 
-
-@media (max-width: 768px) {
-  
-    .main-nav {
-        flex-direction: column;
-        align-items: center;
-        padding: 15px 10px;
-    }
-
-    .company-logo h2 {
-        font-size: 24px;
-    }
-
-    .second-nav {
-        flex-direction: column;
-        align-items: center;
-        padding: 10px;
-    }
-
-
-    .nav-links{
-        flex-direction: column;
-        align-items: center;
-        gap: 5px;
-    }
-
-    .search-container {
-        margin-top: 10px;
-       
-    }
-   .search-button{
-         padding-left: 220px;
-         padding-right: 220px;
-   }
-
-    .card {
-        min-width: 90%;
-    }
+.login-button {
+    border: none;
+    padding: 10px 20px;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 16px;
+    position: absolute;
+    top: 10px;
+    right: 20px;
 }
 
-@media (max-width: 480px) {
-    .company-logo h2 {
-        font-size: 20px;
-    }
-    .search-button{
-        padding-left: 80px;
-        padding-right: 80px;
-  }
-    .nav-links ul {
-         flex-wrap: wrap; 
-        align-items: center;
-        gap: 12px;
-    }
+.login-button:hover {
+    background-color: rgb(0, 105, 210);
+}
 
-    .cards-container {
-        grid-template-columns: 1fr;
-    }
 
-    .news-input {
-        width: 120px;
+
+@media (max-width: 768px) {
+    .main-nav{
+        display: flex;
+        justify-content: space-between;
     }
+    .search-container:hover .news-input {
+        width: 100px;
+        visibility: visible;
+        opacity: 1;
+    }
+    
 }

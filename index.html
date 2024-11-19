@@ -8,13 +8,16 @@
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 </head>
-<body>
-     <header>
+<body id="main-body">
+    <header>
         <nav>
             <div class="main-nav">
                 <a href="#" class="company-logo">
                     <h2>DAILY NEWS</h2>
                 </a>
+
+                <button id="login-button" class="login-button"><a href="Loginform/form.html" style="color: black;">Login</a></button>
+                
             </div>
         </nav>
         
@@ -32,20 +35,20 @@
             <div class="search-container">
                 <div class="search-bar">
                     <input id="search-text" type="text" class="news-input" placeholder="Search">
-                    <button id="search-button" class="search-button"><i class="fa fa-search"></i></button>
+                     <img src="search.png" alt="" id="search-button" class="search-button">
                 </div>
             </div>
         </nav>
      </header>
   
-    
-
     <main>
         <div class="cards-container container flex" id="cards-container">
-            
         </div>
     </main>
 
+    <div class="cards-container" id="cards-container"></div>
+
+   
     <template id="template-news-card">
         <div class="card">
             <div class="card-header">
@@ -58,6 +61,8 @@
             </div>
         </div>
     </template>
+    
+    <div id="overlay" class="overlay"></div>
 
     <script src="script.js"></script>
 </body>
